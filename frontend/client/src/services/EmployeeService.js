@@ -7,6 +7,16 @@ class EmployeeService {
         console.log(employee);
         return axios.post(EMPLOYEE_API_BASE_URL, employee);
     }
+
+    getEmployees(){
+        var result = axios.get(EMPLOYEE_API_BASE_URL);
+        console.log(result.data);
+        return result
+    }
+
+    deleteEmployee(id) {
+        return axios.delete(EMPLOYEE_API_BASE_URL + "/" + id);
+    }
 }
 
 
